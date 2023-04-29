@@ -1,0 +1,16 @@
+config:
+  send_anonymous_usage_stats: false
+  use_colors: true
+
+dev:
+  target: service_calls_dev
+  outputs:
+    service_calls_dev:
+      type: bigquery
+      method: oauth
+      project:
+      dataset:
+      threads: 4
+      job_execution_timeout_seconds: 600
+      job_retries: 5
+      location: us-west1-b
