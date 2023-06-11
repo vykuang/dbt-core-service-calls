@@ -3,7 +3,7 @@ version: 2
 
 sources:
     - name: staging
-      database: service-calls-pipeline-382901 # project
+      database: service-calls-dev # project
       schema: service_calls_models # dataset
       tables: 
         - name: facts_2023_partitioned
