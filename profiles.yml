@@ -3,7 +3,7 @@ config:
   use_colors: true
 
 service_calls_bigquery:
-  target: key
+  target: dev
   outputs:
     dev:
       type: bigquery
@@ -14,9 +14,8 @@ service_calls_bigquery:
       job_execution_timeout_seconds: 600
       job_retries: 5
       location: us-west1
-  outputs:
-    key:
-    type: bigquery
+    prod:
+      type: bigquery
       method: service-account
       project: service-calls-dev
       dataset: service_calls_models
@@ -24,5 +23,5 @@ service_calls_bigquery:
       job_execution_timeout_seconds: 600
       job_retries: 5
       location: us-west1
-      keyfile: /usr/app/keyfile.json
+      keyfile: /usr/app/auth/keyfile.json
 
